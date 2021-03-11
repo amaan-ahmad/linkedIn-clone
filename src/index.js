@@ -1,3 +1,5 @@
+// npx create-react-app --template redux
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
