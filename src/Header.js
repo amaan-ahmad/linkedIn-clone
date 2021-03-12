@@ -14,7 +14,7 @@ function Header() {
     return (
         <div className = 'header'>
             <div className="header__left">
-                <img src="https://www.flaticon.com/svg/vstatic/svg/1409/1409945.svg?token=exp=1615287067~hmac=60e2bb534d433db343cfe6281413ebef" alt=""/>
+                <img src="https://www.flaticon.com/svg/vstatic/svg/1409/1409945.svg?token=exp=1615564809~hmac=0710a65fdf8e1b00ae00d4ffad28c4ad" alt=""/>
 
                 <div className="header__search">
                     <SearchIcon />
