@@ -14,11 +14,13 @@ function Header() {
     return (
         <div className = 'header'>
             <div className="header__left">
-                <img src="https://www.flaticon.com/svg/vstatic/svg/1409/1409945.svg?token=exp=1615564809~hmac=0710a65fdf8e1b00ae00d4ffad28c4ad" alt=""/>
+                {/* <img src="https://www.flaticon.com/svg/vstatic/svg/1409/1409945.svg?token=exp=1615564809~hmac=0710a65fdf8e1b00ae00d4ffad28c4ad" alt=""/> */}
+
+                <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt=""/>
 
                 <div className="header__search">
                     <SearchIcon />
-                    <input type="text"/>
+                    <input placeholder='Search' type="text"/>
                 </div>
             </div>
 
