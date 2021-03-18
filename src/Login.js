@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {auth} from './firebase'
 import './Login.css'
 import {login} from './features/userSlice'
+// import firebase from 'firebase'
 
 function Login() {
 
@@ -21,7 +22,8 @@ function Login() {
             return alert('Please enter your full name.')
         }
 
-        auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
+        auth.createUserWithEmailAndPassword(email, password)
+        .then((userAuth) => {
             userAuth.user.updateProfile({
                 displayName: name,
                 photoURL: profilePic
@@ -41,7 +43,7 @@ function Login() {
         <div className='login'>
             <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" alt=""/>
 
-            <form action="">
+            <form>
                 <input
                     value={name}
                     onChange={(e) => setName(e.target.value)}

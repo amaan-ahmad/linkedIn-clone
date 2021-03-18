@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import './App.css'
 import {auth} from './firebase'
@@ -13,8 +13,20 @@ function App() {
     const user = useSelector(selectUser)
     const dispatch = useDispatch()
 
+    const initFetch = useCallback(() => {
+    dispatch(logout());
+    }, [dispatch]);
 
-    useEffect(() => {
+    // const initLogin = useCallback(() => {
+    //                 dispatch(login({
+    //                 email: userAuth.email,
+    //                 uid: userAuth.uid,
+    //                 displayName: userAuth.displayName,
+    //                 photoUrl: userAuth.photoURL
+    //             }))
+    // }, [dispatch]);
+
+    useEffect((dispatch) => {
         auth.onAuthStateChanged((userAuth) => {
             if(userAuth){
                 // User logged in.
@@ -24,12 +36,14 @@ function App() {
                     displayName: userAuth.displayName,
                     photoUrl: userAuth.photoURL
                 }))
+                // initLogin();
             } else {
                 // User logged out.
-                dispatch(logout())
+                // dispatch(logout())
+                initFetch();
             }
         })
-    }, [])
+    }, [initFetch])
 
   return (
     <div className="app">
