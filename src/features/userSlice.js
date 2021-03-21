@@ -19,7 +19,7 @@ export const userSlice = createSlice({
 export const { login, logout } = userSlice.actions
 
 // 2: Selector
-export const selectUser = (state) => state.user.user
+export const selectUser = (state) => state.user
 export default userSlice.reducer
 
 // 1. Redux Toolkit allows us to write "mutating" logic in reducers. It doesn't actually mutate the state because it uses the Immer library,which detects changes to a "draft state" and produces a brand new immutable state based off those changes
